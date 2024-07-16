@@ -38,14 +38,16 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Latihan membuat user interface</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
 
 <body>
     <!-- header -->
     <!-- <div class="container"> -->
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 mx-5 border-bottom">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 mx-5 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
             <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
                 <i class="bi bi-house" style="font-size: 2rem; color: rgb(54, 90, 156);"></i>
@@ -104,6 +106,7 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
                     <th scope="col">Ketersediaan </th>
                     <th scope="col">Harga</th>
                     <th scope="col">Jumlah</th>
+                    <th scope="col">Total</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -112,40 +115,42 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
                 $i = 1;
                 foreach ($semuaBuku as $buku) {
                 ?>
-                    <tr>
-                        <th scope="row"><?= $i ?></th>
-                        <td><?= $buku["kode"] ?></td>
-                        <td><?= $buku["judul"] ?></td>
-                        <td>
-                            <img src="image/<?= $buku["cover"] ?>" alt="gambar cover" width="80">
-                        </td>
-                        <td> <?= $buku["pengarang"] ?></td>
-                        <td> <?= $buku["penerbit"] ?></td>
-                        <td> <?= $buku["jenis"] ?></td>
-                        <td>
-                            <?=
+                <tr>
+                    <th scope="row"><?= $i ?></th>
+                    <td><?= $buku["kode"] ?></td>
+                    <td><?= $buku["judul"] ?></td>
+                    <td>
+                        <img src="image/<?= $buku["cover"] ?>" alt="gambar cover" width="80">
+                    </td>
+                    <td> <?= $buku["pengarang"] ?></td>
+                    <td> <?= $buku["penerbit"] ?></td>
+                    <td> <?= $buku["jenis"] ?></td>
+                    <td>
+                        <?=
                             $kategori = "";
                             if ($buku["kategori_rpl"] == 1) {
                                 $kategori = $kategori . "RPL,";
                             }
-                            if ($buku["kategori_elektronika"] == 2) {
+                            if ($buku["kategori_elektronika"] == 1) {
                                 $kategori = $kategori . "elektronika";
                             }
                             echo $kategori;
                             ?>
-                        </td>
-                        <td> <?= $buku["ketersediaan"] ?></td>
-                        <td> <?= $buku["harga"] ?></td>
-                        <td> <?= $buku["jumlah"] ?></td>
-                        <td>
-                            <a href="">
-                                <button type="button" class="btn btn-outline-warning"><i class="bi bi-pencil-square"></i></button>
-                            </a>
-                            <a href="">
-                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            </a>
-                        </td>
-                    </tr>
+                    </td>
+                    <td> <?= $buku["ketersediaan"] ?></td>
+                    <td> <?= $buku["harga"] ?></td>
+                    <td> <?= $buku["jumlah"] ?></td>
+                    <td> <?= $buku["total"] ?></td>
+                    <td>
+                        <a href="">
+                            <button type="button" class="btn btn-outline-warning"><i
+                                    class="bi bi-pencil-square"></i></button>
+                        </a>
+                        <a href="">
+                            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </a>
+                    </td>
+                </tr>
                 <?php
                     $i++;
                 }
@@ -159,7 +164,8 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3  mx-5 my-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
 
-            <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
@@ -173,7 +179,8 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
             </ul>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
 
