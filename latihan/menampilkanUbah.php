@@ -23,8 +23,9 @@ $jumlah = $_POST['jumlah'];
 $total = $_POST['total'];
 //connect for databes
 $conn = mysqli_connect("localhost", "root", "", "jwd_pelatihan");
-$query = "insert into buku values('$kode', '$judul', '$cover', '$pengarang', '$penerbit', '$jenis', '$kategori_rpl', '$kategori_elektronika', 
-        '$ketersediaan', '$harga', '$jumlah', '$total')";
+$query = "UPDATE `buku` SET judul='$judul', cover='$cover', pengarang='$pengarang', penerbit='$penerbit', jenis='$jenis', kategori_rpl=$kategori_rpl, kategori_elektronika=$kategori_elektronika, ketersediaan='$ketersediaan', harga='$harga', jumlah='$jumlah', total='$jumlah' WHERE kode='$kode'";
+// $query = "insert into buku values('$kode', '$judul', '$cover', '$pengarang', '$penerbit', '$jenis', '$kategori_rpl', '$kategori_elektronika', 
+//         '$ketersediaan', '$harga', '$jumlah', '$total')";
 mysqli_query($conn, $query);
 $jumlahBerhasil = mysqli_affected_rows($conn);
 if ($jumlahBerhasil > 0) {

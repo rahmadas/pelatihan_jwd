@@ -37,7 +37,7 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Index 3</title>
+    <title>Latihan membuat user interface</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
@@ -87,7 +87,7 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
                 <h2>Data Buku</h2>
             </div>
             <div class="col-sm-4 text-end">
-                <a href="tambahBuku.php">
+                <a href="tambahBuku.html">
                     <button type="button" class="btn btn-outline-success">+ Tambah Buku</button>
                 </a>
             </div>
