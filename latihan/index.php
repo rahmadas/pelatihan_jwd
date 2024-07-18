@@ -64,17 +64,19 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
         </div>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Beranda</a></li>
-            <li><a href="#" class="nav-link px-2">Buku</a></li>
-            <li><a href="#" class="nav-link px-2">Anggota</a></li>
-            <li><a href="#" class="nav-link px-2">Transaksi</a></li>
+            <li><a href="#" class="nav-link px-2 link-secondary">Kode</a></li>
+            <li><a href="#" class="nav-link px-2">Judul</a></li>
+            <li><a href="#" class="nav-link px-2">Cover</a></li>
+            <li><a href="#" class="nav-link px-2">Pengarang</a></li>
+            <li><a href="#" class="nav-link px-2">penerbit</a></li>
+            <li><a href="#" class="nav-link px-2">Pengarang</a></li>
+            <li><a href="#" class="nav-link px-2">Jenis</a></li>
+            <li><a href="#" class="nav-link px-2">Kategori</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">
-                Login
-            </button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <a href="loginTampilan.php" class="btn btn-outline-primary me-2">Login</a>
+            <a href="signup.php" class="btn btn-primary">Sign-up</a>
         </div>
     </header>
     <!-- </div> -->
@@ -181,6 +183,7 @@ $semuaBuku = mysqli_query($conn, "SELECT * FROM buku");
             </ul>
         </footer>
     </div>
+    <script src="/latihan/assest/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

@@ -6,11 +6,11 @@ function cekPengarang (){
   }
 
   function updateTotal(){
-    harga=document.getElementById('hargaBuku').value;
-    jumlah=document.getElementById('jumlahBuku').value;
+    harga = document.getElementById('harga').value;
+    jumlah = document.getElementById('jumlah').value;
     total=harga*jumlah;
 
-    document.getElementById('totalBuku').value=total;
+    document.getElementById('total').value = total;
 }
 
 function cekJumlahHurufKode() {

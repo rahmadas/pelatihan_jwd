@@ -112,8 +112,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="inputPassword4" class="form-label">*Total</label>
-                            <input type="text" class="form-control" placeholder="total" name="total" id="total"
-                                oninput="updateTotal()" />
+                            <input type="text" class="form-control" placeholder="total" name="total" id="total" />
                         </div>
                         <div class="mb-3">
                             <label for="cover" class="form-label">Uploud File</label>
@@ -160,7 +159,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="/tugas1/assets/js/app.js"></script>
+    <script>
+    function updateTotal() {
+        harga = document.getElementById('harga').value;
+        jumlah = document.getElementById('jumlah').value;
+        total = harga * jumlah;
+
+        document.getElementById('total').value = total;
+    }
+
+    function cekJumlahHurufKode() {
+        input = document.getElementById('kodebuku').value;
+        if (input.length) {
+            alert('kode maksimal 5 huruf');
+        }
+    }
+    </script>
 </body>
 
 </html>
